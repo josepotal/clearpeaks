@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clearpeaksApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ClearPeaks Angular Demo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>ClearPeaks Angular</h1>
+
+        <div class="jumbotron" ng-controller="MainController">
+            <a href=""><h2 ng-click="sortElements($event)">All posts<span>...sort me by post Id</span></h2></a>
+            <ul class= "list-unstyled">
+            <li ng-repeat= "post in posts | orderBy: 'id' : reverse" class="well">
+                <h3>Post Number: {{post.id}}</h3>
+                <h3>Post title: {{post.title}}</h3>
+                <p>{{post.body}}</p>
+                <p>UserId: {{post.userId}}</p>
+                <a href="" ng-click="removeElements($event, post)">Delete me</a>
+            </li>  
+            </ul>
+        </div>
+
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
